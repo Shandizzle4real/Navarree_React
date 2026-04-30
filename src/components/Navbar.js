@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
-export default function Navbar({ onOpenModal }) {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -8,9 +9,9 @@ export default function Navbar({ onOpenModal }) {
       <div className="hamburger" onClick={() => setOpen(!open)}>☰</div>
 
       <div className={`menu ${open ? "active" : ""}`}>
-        <a href="#pricing">Pricing</a>
-        <a href="#services">Services</a>
-        <a onClick={onOpenModal}>Submit Work Order</a>
+        <Link to="/pricing" onClick={() => setOpen(false)}>Pricing</Link>
+        <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
+        <Link to="/work-order" onClick={() => setOpen(false)}>Submit Work Order</Link>
       </div>
     </>
   );
