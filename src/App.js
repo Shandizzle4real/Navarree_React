@@ -39,6 +39,9 @@ export default function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/work-order" element={<WorkOrder />} />
       </Routes>
+      <a href="tel:18503189600" className="call-button">
+        📞 Call Now
+      </a>
     </Router>
   );
 }

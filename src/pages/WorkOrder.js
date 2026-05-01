@@ -1,16 +1,33 @@
 import { Helmet } from "react-helmet";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function WorkOrder() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
+    address: "",
     appliance: "",
     model: "",
     serial: "",
     issue: ""
   });
+
+  const addressRef = useRef(null);
+
+  useEffect(() => {
+    if (window.google) {
+      const autocomplete = new window.google.maps.places.Autocomplete(addressRef.current);
+
+      autocomplete.addListener("place_changed", () => {
+        const place = autocomplete.getPlace();
+        setForm((prev) => ({
+          ...prev,
+          address: place.formatted_address || ""
+        }));
+      });
+    }
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -31,68 +48,58 @@ export default function WorkOrder() {
         </p>
 
         <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="3b040a7f-7d53-430c-a6f9-4105b2eceedd" />
+          <input type="hidden" name="access_key" value="YOUR_KEY" />
 
           <div className="grid">
+
             <div>
               <label>Full Name</label>
-              <input name="name" placeholder="John Smith" onChange={handleChange} required />
+              <input name="name" required onChange={handleChange} />
             </div>
 
             <div>
               <label>Phone Number *</label>
-              <input
-                name="phone"
-                placeholder="(555) 123-4567"
-                onChange={handleChange}
-                required
-              />
+              <input name="phone" required onChange={handleChange} />
             </div>
 
             <div>
               <label>Email</label>
-              <input
-                name="email"
-                type="email"
-                placeholder="you@email.com"
-                onChange={handleChange}
-              />
+              <input name="email" type="email" onChange={handleChange} />
             </div>
 
             <div>
               <label>Appliance Type</label>
+              <input name="appliance" required onChange={handleChange} />
+            </div>
+
+            <div className="full-width">
+              <label>Service Address</label>
               <input
-                name="appliance"
-                placeholder="Refrigerator, Washer, etc."
-                onChange={handleChange}
+                ref={addressRef}
+                name="address"
+                placeholder="Start typing address..."
                 required
+                onChange={handleChange}
               />
             </div>
 
             <div>
               <label>Model Number</label>
-              <input
-                name="model"
-                placeholder="Optional"
-                onChange={handleChange}
-              />
+              <input name="model" onChange={handleChange} />
             </div>
 
             <div>
               <label>Serial Number</label>
-              <input
-                name="serial"
-                placeholder="Optional"
-                onChange={handleChange}
-              />
+              <input name="serial" onChange={handleChange} />
             </div>
+
           </div>
 
-          <div className="full">
+          <div className="full-width">
             <label>Describe the Issue</label>
             <textarea
               name="issue"
-              placeholder="What’s going wrong? Any noises, leaks, etc."
+              placeholder="Describe the problem..."
               onChange={handleChange}
               required
             />
@@ -103,7 +110,7 @@ export default function WorkOrder() {
           </button>
 
           {!isValid && (
-            <p className="error">Phone number is required to submit</p>
+            <p className="error">Phone number is required</p>
           )}
         </form>
       </div>
