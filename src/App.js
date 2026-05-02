@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import WorkOrder from "./pages/WorkOrder";
+import CompanyInfo from "./pages/CompanyInfo";
 
 import "./styles.css";
 
@@ -34,6 +35,7 @@ export default function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/company" element={<CompanyInfo />} />
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/pricing" element={<Pricing />} />

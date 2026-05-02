@@ -13,6 +13,7 @@ export default function Navbar() {
         <Link to="/services" onClick={() => setOpen(false)}>Services</Link>
         <Link to="/pricing" onClick={() => setOpen(false)}>Pricing</Link>
         <Link to="/work-order" onClick={() => setOpen(false)}>Submit Work Order</Link>
+        <Link to="/company" onClick={() => setOpen(false)}>Company Info</Link>
       </div>
     </>
   );

@@ -16,7 +16,7 @@ export default function WorkOrder() {
   const addressRef = useRef(null);
 
   useEffect(() => {
-    if (window.google) {
+    if (window.google && addressRef.current) {
       const autocomplete = new window.google.maps.places.Autocomplete(addressRef.current);
 
       autocomplete.addListener("place_changed", () => {
@@ -35,17 +35,39 @@ export default function WorkOrder() {
 
   const isValid = form.phone.trim() !== "";
 
+  useEffect(() => {
+  const btn = document.querySelector(".call-button");
+
+  const handleFocus = () => btn && (btn.style.display = "none");
+  const handleBlur = () => btn && (btn.style.display = "block");
+
+  document.querySelectorAll("input, textarea").forEach(el => {
+    el.addEventListener("focus", handleFocus);
+    el.addEventListener("blur", handleBlur);
+  });
+
+  return () => {
+    document.querySelectorAll("input, textarea").forEach(el => {
+      el.removeEventListener("focus", handleFocus);
+      el.removeEventListener("blur", handleBlur);
+    });
+  };
+}, []);
+
   return (
-    <section className="workorder-page">
+    <section className="page">
       <Helmet>
-        <title>Submit Appliance Repair Request | Navarre Appliance Company</title>
+        <title>Submit Work Order | Navarre Appliance Company</title>
       </Helmet>
 
-      <div className="form-container">
+      <div className="page-container">
         <h1>Submit Work Order</h1>
         <p className="subtitle">
           Fill out the form below and we’ll get back to you quickly.
         </p>
+        <p className="subtitle">
+         (Typically within 1-2 hours during business hours)
+         </p>
 
         <form action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="YOUR_KEY" />
