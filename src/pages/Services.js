@@ -19,12 +19,13 @@ export default function Services() {
             <li>Washer & Dryer Repair</li>
             <li>Oven, Range & Cooktop Repair</li>
             <li>Dishwasher Repair</li>
-            <li>Commercial Equipment Repair</li>
+            <li>Commercial Kitchen Equipment Repair</li>
+            <li>Icemakers</li>
           </ul>
         </div>
 
         <p className="note">
-          We service most major brands and models. Including sealed system repairs we carry our EPA 608 + EPA HC/HFO.
+          We service any brand and model appliance, commercial kitchen equipment, and commercial refrigeration. We carry our EPA 608 + EPA HC/HFO and are certified for refrigeration repairs.
         </p>
       </div>
     </section>

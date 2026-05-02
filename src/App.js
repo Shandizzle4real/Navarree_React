@@ -25,7 +25,7 @@ export default function App() {
             "@context": "https://schema.org",
             "@type": "HomeAndConstructionBusiness",
             "name": "Navarre Appliance Company",
-            "areaServed": ["Navarre FL","Pensacola FL","Gulf Breeze FL"],
+            "areaServed": ["Navarre FL","Pensacola FL","Gulf Breeze FL","Milton FL","Destin FL","Pace FL"],
             "serviceType": "Appliance Repair"
           }
           `}
