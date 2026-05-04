@@ -13,7 +13,7 @@ export default function Hero() {
 
       <h2>Servicing:</h2>
       <p className="tagline">
-        Navarre, Gulf Breeze, Pensacola, Milton, Fort Walton
+        Navarre, Gulf Breeze, Pensacola, Milton, Fort Walton, Destin + Surrounding Areas
       </p>
 
       <Countdown />
