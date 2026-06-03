@@ -8,9 +8,13 @@ export default function Hero() {
       <h1>Navarre Appliance Company</h1>
 
       <p className="tagline">
-        Specializing in residential and commercial appliance repair.
+        Experienced & specializing in residential appliance repair.
       </p>
 
+      <p className="tagline">
+       Including refrigerators, icemakers, ovens, cooktops, washers, dryers, and more!
+      </p>
+      
       <h2>Servicing:</h2>
       <p className="tagline">
         Navarre, Gulf Breeze, Pensacola, Milton, Fort Walton, Destin + Surrounding Areas

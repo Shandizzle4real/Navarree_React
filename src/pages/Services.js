@@ -19,14 +19,16 @@ export default function Services() {
             <li>Washer & Dryer Repair</li>
             <li>Oven, Range & Cooktop Repair</li>
             <li>Dishwasher Repair</li>
-            <li>Commercial Kitchen Equipment Repair</li>
             <li>Icemakers</li>
           </ul>
         </div>
 
         <p className="note">
-          We service any brand and model appliance, commercial kitchen equipment, and commercial refrigeration. We carry our EPA 608 + EPA HC/HFO and are certified for refrigeration repairs.
+          We service any brand and model appliance, including residential refrigerator sealed systems. We carry our EPA 608 + EPA HC/HFO and are certified for refrigeration repairs.
         </p>
+        <p className="note">
+        Experienced in repairs on folloing brands & more: Whirlpool, GE Appliances, Samsung, LG, Frigidaire, KitchenAid, Maytag, Bosch, Electrolux, Amana, JennAir, Café, Monogram, Thermador, Viking, Sub-Zero, Wolf, Miele, Fisher & Paykel, Dacor, Kenmore, Speed Queen, Hotpoint, Hisense, Haier, Sharp, Panasonic, Danby, Summit, ZLINE, SMEG, BlueStar, U-Line, Scotsman, Marvel, Avanti, Magic Chef, Insignia, Crosley, Roper, Asko, Liebherr, Gaggenau, AGA, ILVE, Fulgor Milano, True Residential, Zephyr, Broan, Perlick, GE Profile, Admiral, Estate, American Range, Verona, Thor Kitchen, Midea, Galanz, Hestan, Lynx Professional Grills, DCS Appliances.
+      </p>
       </div>
     </section>
   );

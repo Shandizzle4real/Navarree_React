@@ -14,17 +14,17 @@ export default function CompanyInfo() {
           </div>
 
           <div className="info-row">
-            <strong>Hours of Operation:</strong>
+            <strong>Hours of Operation: </strong>
             <span>Monday – Friday: 8:00 AM – 5:00 PM</span>
           </div>
 
           <div className="info-row">
-            <strong>Weekend:</strong>
+            <strong>Weekend: </strong>
             <span>Closed Saturday & Sunday</span>
           </div>
 
           <div className="info-row">
-            <strong>Phone:</strong>
+            <strong>Phone: </strong>
 			<a href="tel:18503189600">(850) 318-9600</a>
           </div>
 

@@ -1,13 +1,58 @@
 import { Helmet } from "react-helmet";
 import { useState, useEffect, useRef } from "react";
 
+const applianceTypes = [
+  "Refrigerator",
+  "Freezer",
+  "Ice Maker",
+  "Wine Cooler",
+  "Dishwasher",
+  "Garbage Disposal",
+  "Range / Stove",
+  "Cooktop",
+  "Wall Oven",
+  "Microwave",
+  "Range Hood",
+  "Washer",
+  "Dryer",
+  "Stacked Laundry Unit",
+  "Gas Dryer",
+  "Electric Dryer",
+  "Other"
+];
+
+const applianceBrands = [
+  "Whirlpool",
+  "GE",
+  "Samsung",
+  "LG",
+  "Frigidaire",
+  "KitchenAid",
+  "Maytag",
+  "Bosch",
+  "Electrolux",
+  "Amana",
+  "Speed Queen",
+  "JennAir",
+  "Sub-Zero",
+  "Wolf",
+  "Viking",
+  "Thermador",
+  "Miele",
+  "Fisher & Paykel",
+  "Other"
+];
+
 export default function WorkOrder() {
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     address: "",
     appliance: "",
+    brand: "",
+    relation: "",
     model: "",
     serial: "",
     issue: ""
@@ -90,8 +135,19 @@ export default function WorkOrder() {
             </div>
 
             <div>
-              <label>Appliance Type</label>
-              <input name="appliance" required onChange={handleChange} />
+              <label>Relationship to Appliance</label>
+              <select
+                name="relation"
+                value={form.relation}
+                required
+                onChange={handleChange}
+              >
+                <option value="">Select One</option>
+                <option value="Owner">Owner</option>
+                <option value="Tenant">Tenant</option>
+                <option value="Property Manager">Property Manager</option>
+                <option value="Landlord">Landlord</option>
+              </select>
             </div>
 
             <div className="full-width">
@@ -104,6 +160,42 @@ export default function WorkOrder() {
                 onChange={handleChange}
               />
             </div>
+
+            <div>
+              <label>Appliance Type</label>
+              <select
+                name="appliance"
+                value={form.appliance}
+                required
+                onChange={handleChange}
+              >
+                <option value="">Select Appliance</option>
+                {applianceTypes.map((type) => (
+                  <option key={type} value={type}>
+                    {type}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+            <label>Appliance Brand</label>
+
+            <input
+              list="brand-list"
+              name="brand"
+              value={form.brand}
+              placeholder="Start typing brand..."
+              required
+              onChange={handleChange}
+            />
+
+            <datalist id="brand-list">
+              {applianceBrands.map((brand) => (
+                <option key={brand} value={brand} />
+              ))}
+            </datalist>
+          </div>
 
             <div>
               <label>Model Number</label>
