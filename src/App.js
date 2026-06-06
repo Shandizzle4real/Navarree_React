@@ -7,6 +7,13 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import WorkOrder from "./pages/WorkOrder";
 import CompanyInfo from "./pages/CompanyInfo";
+import Footer from "./components/Footer";
+
+import RefrigeratorRepair from "./pages/RefrigeratorRepair";
+import WasherRepair from "./pages/WasherRepair";
+import DryerRepair from "./pages/DryerRepair";
+import DishwasherRepair from "./pages/DishwasherRepair";
+import OvenRangeRepair from "./pages/OvenRangeRepair";
 
 import "./styles.css";
 
@@ -40,10 +47,20 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/work-order" element={<WorkOrder />} />
+
+        <Route path="/refrigerator-repair" element={<RefrigeratorRepair />} />
+        <Route path="/washer-repair" element={<WasherRepair />} />
+        <Route path="/dryer-repair" element={<DryerRepair />} />
+        <Route path="/dishwasher-repair" element={<DishwasherRepair />} />
+        <Route path="/oven-range-repair" element={<OvenRangeRepair />} />
       </Routes>
+
+    <Footer />
+    
       <a href="tel:18503189600" className="call-button">
         📞 Call Now
       </a>
     </Router>
+
   );
 }

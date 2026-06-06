@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import { useState, useEffect, useRef } from "react";
+import Footer from "./Footer";
 
 const applianceTypes = [
   "Refrigerator",
