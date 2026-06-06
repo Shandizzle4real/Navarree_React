@@ -3,6 +3,9 @@ import Hero from "../components/Hero";
 
 export default function Home() {
   return (
+    <section className="home-page">
+
+  <div className="home-card">
     <>
       <Helmet>
         <title>Appliance Repair Navarre FL | Navarre Appliance Company</title>
@@ -11,5 +14,8 @@ export default function Home() {
 
       <Hero />
     </>
+      </div>
+
+</section>
   );
 }
